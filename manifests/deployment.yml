@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: newaksnsdemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: newaksnsdemo
+  template:
+    metadata:
+      labels:
+        app: newaksnsdemo 
+    spec:
+      containers:
+        - name: newaksnsdemo 
+          image: aksstateofnebraska.azurecr.io/newaksnsdemo
+          ports:
+          - containerPort: 4
